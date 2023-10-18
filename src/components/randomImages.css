@@ -45,15 +45,3 @@
     columns: 4;
     gap: 20px;
 }
-
-.box {
-    width: 100%;
-    margin-bottom: 20px;
-    break-inside: avoid;
-}
-
-.img {
-    max-width: 100%;
-
-    border-radius: 10px;
-}

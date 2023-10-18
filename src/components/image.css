@@ -1,0 +1,68 @@
+.box {
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.img {
+    max-width: 100%;
+
+    border-radius: 10px;
+}
+
+.box:hover {
+    scale: 1.1;
+}
+
+.box-full {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(from #000 r g b, 0.4);
+    backdrop-filter: blur(10px);
+
+    z-index: 10;
+}
+
+.box-full.visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    cursor: pointer;
+}
+
+.img-full {
+    max-width: 100%;
+    height: 80%;
+
+    object-fit: contain;
+
+    border-radius: 7px;
+
+    cursor: default;
+}
+
+.desc {
+    padding: 10px 15px;
+
+    font-weight: 500;
+
+    background-color: #f5f5f5;
+    border-radius: 4px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    cursor: default;
+}
