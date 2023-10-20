@@ -8,12 +8,14 @@ const RandomImages = () => {
     const searchRef = useRef();
 
     function getImages() {
-        fetch(`https://api.unsplash.com/photos/random?query=${searchRef.current}&count=16`, {
+        fetch(`https://api.unsplash.com/photos/random?query=${searchRef.current.value}&count=16`, {
             method: "GET",
             headers: {
-                Authorization: `Client-ID 5-sYIFigG2GxEMMK3BBFDHo4pTGIxDnUApvnpBWaty8`,
+                Authorization: `Client-ID hgFnXWDwPNHpfpJSMsx8Nh5q7C4QoYGmghEFvqT-Oos`,
             },
-        }).then((res) => res.json().then((data) => setImages(data)));
+        })
+            .then((res) => res.json())
+            .then((data) => setImages(data));
 
         searchRef.current.value = "";
     }
@@ -46,7 +48,7 @@ const RandomImages = () => {
             </form>
 
             <div className="gallery">
-                {!images ? (
+                {images ? (
                     images.map((i, inx) => <Image key={inx} i={i} />)
                 ) : (
                     <h2>There is no image yet!</h2>
